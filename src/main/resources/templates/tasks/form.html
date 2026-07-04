@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${isEdit} ? 'Edit Task - Todo App' : 'New Task - Todo App'">Task Form</title>
+</head>
+<body th:replace="~{fragments/layout :: layout(~{::title}, ~{::section})}">
+<section>
+    <div class="mb-4">
+        <a th:href="@{/tasks}" class="btn btn-sm btn-outline-secondary">
+            <i class="fa-solid fa-arrow-left me-1"></i>Back to Tasks
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-transparent py-3">
+            <h2 class="h4 mb-0">
+                <i class="fa-solid fa-pen-to-square me-2 text-primary" th:if="${isEdit}"></i>
+                <i class="fa-solid fa-plus me-2 text-primary" th:unless="${isEdit}"></i>
+                <span th:text="${isEdit} ? 'Edit Task' : 'Add New Task'">Add Task</span>
+            </h2>
+        </div>
+        <div class="card-body p-4">
+            <form th:action="${isEdit} ? @{/tasks/{id}(id=${taskDto.id})} : @{/tasks}"
+                  th:object="${taskDto}" method="post" id="taskForm" novalidate>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="title" th:field="*{title}"
+                               th:classappend="${#fields.hasErrors('title')} ? 'is-invalid'">
+                        <div class="invalid-feedback" th:errors="*{title}"></div>
+                    </div>
+                    <div class="col-12">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" th:field="*{description}" rows="4"
+                                  th:classappend="${#fields.hasErrors('description')} ? 'is-invalid'"></textarea>
+                        <div class="invalid-feedback" th:errors="*{description}"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="dueDate" class="form-label">Due Date</label>
+                        <input type="date" class="form-control" id="dueDate" th:field="*{dueDate}">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="dueTime" class="form-label">Due Time</label>
+                        <input type="time" class="form-control" id="dueTime" th:field="*{dueTime}">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="priority" class="form-label">Priority</label>
+                        <select class="form-select" id="priority" th:field="*{priority}">
+                            <option th:each="p : ${priorities}" th:value="${p}" th:text="${p}"></option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="status" class="form-label">Status</label>
+                        <select class="form-select" id="status" th:field="*{status}">
+                            <option th:each="s : ${statuses}" th:value="${s}" th:text="${s}"></option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="category" class="form-label">Category</label>
+                        <select class="form-select" id="category" th:field="*{category}">
+                            <option value="">-- Select --</option>
+                            <option th:each="cat : ${categories}" th:value="${cat}" th:text="${cat}"></option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label for="remarks" class="form-label">Remarks</label>
+                        <input type="text" class="form-control" id="remarks" th:field="*{remarks}"
+                               th:classappend="${#fields.hasErrors('remarks')} ? 'is-invalid'">
+                        <div class="invalid-feedback" th:errors="*{remarks}"></div>
+                    </div>
+                </div>
+                <div class="mt-4 d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa-solid fa-floppy-disk me-1"></i>
+                        <span th:text="${isEdit} ? 'Update Task' : 'Create Task'">Save</span>
+                    </button>
+                    <a th:href="@{/tasks}" class="btn btn-outline-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>
