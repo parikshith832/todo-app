@@ -31,6 +31,20 @@ public class TaskServiceImpl implements TaskService {
                 .todayTasks(taskRepository.countByUserAndDueDate(user, today))
                 .build();
     }
+    @Override
+    @Transactional(readOnly = true)
+    public List<Task> getTodayTasks(User user) {
+
+        return taskRepository.findTodayTasks(user, LocalDate.now());
+
+    }
+    @Override
+    @Transactional(readOnly = true)
+    public List<Task> getRecentTasks(User user) {
+
+        return taskRepository.findTop5ByUserOrderByIdDesc(user);
+
+    }
 
     @Override
     @Transactional(readOnly = true)
@@ -106,7 +120,6 @@ public class TaskServiceImpl implements TaskService {
         task.setStatus(TaskStatus.PENDING);
         return taskRepository.save(task);
     }
-
     @Override
     public TaskDto toDto(Task task) {
         TaskDto dto = new TaskDto();

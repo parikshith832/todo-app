@@ -13,48 +13,83 @@
 </head>
 <body class="app-body">
 <nav class="navbar navbar-expand-lg navbar-dark app-navbar shadow-sm" sec:authorize="isAuthenticated()">
-    <div class="container">
+    <div class="container-fluid">
+
         <a class="navbar-brand fw-bold" th:href="@{/dashboard}">
-            <i class="fa-solid fa-list-check me-2"></i>Todo App
+            <i class="fa-solid fa-list-check me-2"></i>
+            Todo App
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
+
+        <div class="collapse navbar-collapse" id="navbar">
+
+            <ul class="navbar-nav ms-auto align-items-center">
+
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/dashboard}"><i class="fa-solid fa-gauge-high me-1"></i>Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/tasks}"><i class="fa-solid fa-tasks me-1"></i>Tasks</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/calendar}"><i class="fa-solid fa-calendar-days me-1"></i>Calendar</a>
-                </li>
-            </ul>
-            <div class="d-flex align-items-center gap-3">
-                <button type="button" class="btn btn-sm btn-outline-light theme-toggle" id="themeToggle" title="Toggle dark mode">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-                <span class="text-light small d-none d-md-inline">
-                    <i class="fa-solid fa-user me-1"></i><span sec:authentication="name">user</span>
-                </span>
-                <form th:action="@{/logout}" method="post" class="m-0">
-                    <button type="submit" class="btn btn-sm btn-outline-light">
-                        <i class="fa-solid fa-right-from-bracket me-1"></i>Logout
+                    <button
+                            id="themeToggle"
+                            class="btn btn-outline-light me-3">
+
+                        <i class="fa-solid fa-moon"></i>
+
                     </button>
-                </form>
-            </div>
+                </li>
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle"
+                       href="#"
+                       role="button"
+                       data-bs-toggle="dropdown">
+
+                        <i class="fa-solid fa-user-circle me-2"></i>
+
+                        <span sec:authentication="name">User</span>
+
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <form th:action="@{/logout}" method="post" class="m-0">
+                                <button
+                                        type="submit"
+                                        class="dropdown-item text-danger">
+
+                                    <i class="fa-solid fa-right-from-bracket me-2"></i>
+                                    Logout
+
+                                </button>
+                            </form>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
         </div>
+
     </div>
 </nav>
 
-<main class="container py-4">
+<main class="container py-5">
     <div th:replace="${content}">Content</div>
 </main>
+<a th:href="@{/tasks/new}" class="floating-add-btn">
+    <i class="fa-solid fa-plus"></i>
+</a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script th:src="@{/js/app.js}"></script>
+
 </body>
 </html>

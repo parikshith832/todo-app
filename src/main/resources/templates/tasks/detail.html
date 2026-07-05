@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <script>
+        (() => {
+            if (localStorage.getItem("todo-theme") === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
     <title th:text="${task.title + ' - Todo App'}">Task Detail</title>
 </head>
 <body th:replace="~{fragments/layout :: layout(~{::title}, ~{::section})}">

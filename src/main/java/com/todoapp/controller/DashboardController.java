@@ -17,9 +17,19 @@ public class DashboardController {
 
     @GetMapping("/dashboard")
     public String dashboard(Model model) {
+
         User user = currentUser.getUser();
+
         model.addAttribute("user", user);
-        model.addAttribute("stats", taskService.getDashboardStats(user));
+
+        model.addAttribute("stats",
+                taskService.getDashboardStats(user));
+
+        model.addAttribute("todayTasks",
+                taskService.getTodayTasks(user));
+        model.addAttribute("recentTasks",
+                taskService.getRecentTasks(user));
+
         return "dashboard";
     }
 }

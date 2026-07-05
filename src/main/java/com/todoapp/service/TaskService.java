@@ -29,8 +29,8 @@ public interface TaskService {
     Task markComplete(Long id, User user);
 
     Task markPending(Long id, User user);
-
+    List<Task> getTodayTasks(User user);
     TaskDto toDto(Task task);
-
+    List<Task> getRecentTasks(User user);
     void applyDto(Task task, TaskDto taskDto);
 }
