@@ -1,65 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+  <head>
     <title>Calendar - Todo App</title>
-</head>
-<body th:replace="~{fragments/layout :: layout(~{::title}, ~{::section})}">
-<section>
-    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+    <script>
+      (() => {
+        if (localStorage.getItem("todo-theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+  </head>
+  <body th:replace="~{fragments/layout :: layout(~{::title}, ~{::section})}">
+    <section>
+      <div
+        class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4"
+      >
         <div>
-            <h1 class="page-title mb-1"><i class="fa-solid fa-calendar-days me-2 text-primary"></i>Calendar</h1>
-            <p class="text-muted mb-0">View tasks by due date</p>
+          <h1 class="page-title mb-1">
+            <i class="fa-solid fa-calendar-days me-2 text-primary"></i>Calendar
+          </h1>
+          <p class="text-muted mb-0">View tasks by due date</p>
         </div>
-    </div>
+      </div>
 
-    <div class="row g-4">
+      <div class="row g-4">
         <div class="col-lg-7">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <div id="calendar" class="calendar-widget"
-                         th:attr="data-year=${yearMonth.year},data-month=${yearMonth.monthValue},data-selected=${selectedDate}">
-                    </div>
-                </div>
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div
+                id="calendar"
+                class="calendar-widget"
+                th:attr="data-year=${yearMonth.year},data-month=${yearMonth.monthValue},data-selected=${selectedDate}"
+              ></div>
             </div>
+          </div>
         </div>
         <div class="col-lg-5">
-            <div class="card shadow-sm h-100">
-                <div class="card-header bg-transparent d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">
-                        <i class="fa-solid fa-list me-2"></i>
-                        Tasks for <span id="selectedDateLabel" th:text="${#temporals.format(selectedDate, 'MMM dd, yyyy')}"></span>
-                    </h5>
-                    <a th:href="@{/tasks/new(dueDate=${selectedDate})}" class="btn btn-sm btn-primary" id="addTaskBtn">
-                        <i class="fa-solid fa-plus"></i>
-                    </a>
-                </div>
-                <div class="card-body" id="dateTasksPanel">
-                    <div th:if="${#lists.isEmpty(tasksOnDate)}" class="text-center text-muted py-4">
-                        <i class="fa-solid fa-calendar-xmark fa-2x mb-2"></i>
-                        <p class="mb-0">No tasks due on this date.</p>
-                    </div>
-                    <div th:each="task : ${tasksOnDate}" class="calendar-task-item mb-3 p-3 rounded">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <div>
-                                <h6 class="mb-1" th:text="${task.title}">Task</h6>
-                                <small class="text-muted" th:if="${task.dueTime}"
-                                       th:text="${#temporals.format(task.dueTime, 'hh:mm a')}"></small>
-                            </div>
-                            <span class="badge"
-                                  th:classappend="${task.status.name() == 'COMPLETED'} ? 'bg-success' : 'bg-warning text-dark'"
-                                  th:text="${task.status}">PENDING</span>
-                        </div>
-                        <a th:href="@{/tasks/{id}(id=${task.id})}" class="stretched-link"></a>
-                    </div>
-                </div>
+          <div class="card shadow-sm h-100">
+            <div
+              class="card-header bg-transparent d-flex justify-content-between align-items-center"
+            >
+              <h5 class="mb-0">
+                <i class="fa-solid fa-list me-2"></i>
+                Tasks for
+                <span
+                  id="selectedDateLabel"
+                  th:text="${#temporals.format(selectedDate, 'MMM dd, yyyy')}"
+                ></span>
+              </h5>
+              <a
+                th:href="@{/tasks/new(dueDate=${selectedDate})}"
+                class="btn btn-sm btn-primary"
+                id="addTaskBtn"
+              >
+                <i class="fa-solid fa-plus"></i>
+              </a>
             </div>
+            <div class="card-body" id="dateTasksPanel">
+              <div
+                th:if="${#lists.isEmpty(tasksOnDate)}"
+                class="text-center text-muted py-4"
+              >
+                <i class="fa-solid fa-calendar-xmark fa-2x mb-2"></i>
+                <p class="mb-0">No tasks due on this date.</p>
+              </div>
+              <div
+                th:each="task : ${tasksOnDate}"
+                class="calendar-task-item mb-3 p-3 rounded"
+              >
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <h6 class="mb-1" th:text="${task.title}">Task</h6>
+                    <small
+                      class="text-muted"
+                      th:if="${task.dueTime}"
+                      th:text="${#temporals.format(task.dueTime, 'hh:mm a')}"
+                    ></small>
+                  </div>
+                  <span
+                    class="badge"
+                    th:classappend="${task.status.name() == 'COMPLETED'} ? 'bg-success' : 'bg-warning text-dark'"
+                    th:text="${task.status}"
+                    >PENDING</span
+                  >
+                </div>
+                <a
+                  th:href="@{/tasks/{id}(id=${task.id})}"
+                  class="stretched-link"
+                ></a>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <script th:inline="javascript">
+      <script th:inline="javascript">
         window.calendarTasksByDate = /*[[${tasksByDate}]]*/ {};
-    </script>
-    <script th:src="@{/js/calendar.js}"></script>
-</section>
-</body>
+      </script>
+      <script th:src="@{/js/calendar.js}"></script>
+    </section>
+  </body>
 </html>

@@ -23,7 +23,8 @@ body.app-body {
     background-color: var(--app-bg);
     color: var(--text-primary);
     min-height: 100vh;
-    transition: var(--transition);
+    transition: background-color .25s ease,
+        color .25s ease;
 }
 
 .app-navbar {
@@ -89,10 +90,21 @@ body.app-body {
     color: #fff;
 }
 
-.stat-total .stat-icon { background: linear-gradient(135deg, #4361ee, #3a0ca3); }
-.stat-pending .stat-icon { background: linear-gradient(135deg, #f77f00, #d62828); }
-.stat-completed .stat-icon { background: linear-gradient(135deg, #2dc653, #008000); }
-.stat-today .stat-icon { background: linear-gradient(135deg, #4cc9f0, #4361ee); }
+.stat-total .stat-icon {
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+}
+
+.stat-pending .stat-icon {
+    background: linear-gradient(135deg, #f77f00, #d62828);
+}
+
+.stat-completed .stat-icon {
+    background: linear-gradient(135deg, #2dc653, #008000);
+}
+
+.stat-today .stat-icon {
+    background: linear-gradient(135deg, #4cc9f0, #4361ee);
+}
 
 .stat-value {
     font-size: 1.75rem;
@@ -154,9 +166,20 @@ body.app-body {
     overflow: hidden;
 }
 
-.priority-badge.priority-low { background-color: #6c757d; color: #fff; }
-.priority-badge.priority-medium { background-color: #4361ee; color: #fff; }
-.priority-badge.priority-high { background-color: #dc3545; color: #fff; }
+.priority-badge.priority-low {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.priority-badge.priority-medium {
+    background-color: #4361ee;
+    color: #fff;
+}
+
+.priority-badge.priority-high {
+    background-color: #dc3545;
+    color: #fff;
+}
 
 .detail-sidebar {
     background-color: var(--app-bg);
@@ -290,4 +313,50 @@ body.app-body {
     .stat-value {
         font-size: 1.4rem;
     }
+}
+
+/* ==============================
+   DARK MODE FORM FIXES
+   ============================== */
+
+html[data-theme="dark"] .form-label,
+html[data-theme="dark"] label {
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .card-title,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5 {
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .form-select {
+    background: #252b3a;
+    color: #ffffff;
+    border-color: #495057;
+}
+
+html[data-theme="dark"] .form-control:focus,
+html[data-theme="dark"] .form-select:focus {
+    background: #252b3a;
+    color: #ffffff;
+    border-color: #6ea8fe;
+    box-shadow: none;
+}
+
+html[data-theme="dark"] .form-control::placeholder {
+    color: #b6bcc8;
+}
+
+html[data-theme="dark"] input[type="date"],
+html[data-theme="dark"] input[type="time"] {
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .form-text {
+    color: #cbd5e1;
 }
