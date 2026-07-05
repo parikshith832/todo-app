@@ -306,13 +306,14 @@ java -jar target/todo-app-1.0.0.jar
 
 ---
 
-# 👨‍💻 Author
+## 👥 Team
 
-**Parikshith S**
+This project was collaboratively developed by:
 
-Information Science & Engineering
+- **Parikshith S**
+- **Darshan N G**
 
-Spring Boot • Java • MySQL • Full Stack Development
+as part of an IOT Full Stack Web Development project.
 
 ---
 
