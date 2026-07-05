@@ -65,24 +65,80 @@ Open [http://localhost:8080](http://localhost:8080) in your browser.
 
 ```
 todo-app/
+├── sql/
+│   └── schema.sql
+│
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── todoapp/
+│       │           ├── config/
+│       │           │   ├── SecurityConfig.java
+│       │           │   └── WebConfig.java
+│       │           │
+│       │           ├── controller/
+│       │           │   ├── AuthController.java
+│       │           │   ├── CalendarController.java
+│       │           │   ├── DashboardController.java
+│       │           │   └── TaskController.java
+│       │           │
+│       │           ├── dto/
+│       │           │   ├── DashboardStatsDto.java
+│       │           │   ├── RegisterDto.java
+│       │           │   └── TaskDto.java
+│       │           │
+│       │           ├── entity/
+│       │           │   ├── Priority.java
+│       │           │   ├── Task.java
+│       │           │   ├── TaskStatus.java
+│       │           │   └── User.java
+│       │           │
+│       │           ├── repository/
+│       │           │   ├── TaskRepository.java
+│       │           │   └── UserRepository.java
+│       │           │
+│       │           ├── security/
+│       │           │   ├── CurrentUser.java
+│       │           │   └── CustomUserDetailsService.java
+│       │           │
+│       │           ├── service/
+│       │           │   ├── impl/
+│       │           │   │   ├── TaskServiceImpl.java
+│       │           │   │   └── UserServiceImpl.java
+│       │           │   ├── TaskService.java
+│       │           │   └── UserService.java
+│       │           │
+│       │           └── TodoApplication.java
+│       │
+│       └── resources/
+│           ├── static/
+│           │   ├── css/
+│           │   │   └── style.css
+│           │   └── js/
+│           │       ├── app.js
+│           │       ├── calendar.js
+│           │       └── search.js
+│           │
+│           ├── templates/
+│           │   ├── fragments/
+│           │   │   └── layout.html
+│           │   ├── tasks/
+│           │   │   ├── detail.html
+│           │   │   ├── form.html
+│           │   │   └── list.html
+│           │   ├── calendar.html
+│           │   ├── dashboard.html
+│           │   ├── login.html
+│           │   └── register.html
+│           │
+│           └── application.properties
+│
+├── .gitattributes
+├── .gitignore
+├── LICENSE
 ├── pom.xml
-├── sql/schema.sql
-├── README.md
-└── src/main/
-    ├── java/com/todoapp/
-    │   ├── TodoApplication.java
-    │   ├── config/          # Security, Web MVC config
-    │   ├── controller/      # Auth, Dashboard, Task, Calendar
-    │   ├── dto/             # Data transfer objects
-    │   ├── entity/          # User, Task entities
-    │   ├── repository/      # JPA repositories
-    │   ├── security/        # UserDetails, CurrentUser helper
-    │   └── service/         # Business logic
-    └── resources/
-        ├── application.properties
-        ├── static/css/style.css
-        ├── static/js/       # app.js, search.js, calendar.js
-        └── templates/       # Thymeleaf HTML pages
+└── README.md
 ```
 
 ## Default Routes
