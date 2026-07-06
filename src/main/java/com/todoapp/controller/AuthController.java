@@ -31,8 +31,8 @@ public class AuthController {
 
     @PostMapping("/register")
     public String register(@Valid @ModelAttribute RegisterDto registerDto,
-                           BindingResult bindingResult,
-                           RedirectAttributes redirectAttributes) {
+            BindingResult bindingResult,
+            RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             return "register";
         }

@@ -31,6 +31,7 @@ public class TaskServiceImpl implements TaskService {
                 .todayTasks(taskRepository.countByUserAndDueDate(user, today))
                 .build();
     }
+
     @Override
     @Transactional(readOnly = true)
     public List<Task> getTodayTasks(User user) {
@@ -38,6 +39,7 @@ public class TaskServiceImpl implements TaskService {
         return taskRepository.findTodayTasks(user, LocalDate.now());
 
     }
+
     @Override
     @Transactional(readOnly = true)
     public List<Task> getRecentTasks(User user) {
@@ -60,7 +62,8 @@ public class TaskServiceImpl implements TaskService {
         }
         return switch (filter.toLowerCase()) {
             case "pending" -> taskRepository.findByUserAndStatusOrderByDueDateAscDueTimeAsc(user, TaskStatus.PENDING);
-            case "completed" -> taskRepository.findByUserAndStatusOrderByDueDateAscDueTimeAsc(user, TaskStatus.COMPLETED);
+            case "completed" ->
+                taskRepository.findByUserAndStatusOrderByDueDateAscDueTimeAsc(user, TaskStatus.COMPLETED);
             case "today" -> taskRepository.findTodayTasks(user, LocalDate.now());
             case "overdue" -> taskRepository.findOverdueTasks(user, LocalDate.now());
             default -> getAllTasks(user);
@@ -120,6 +123,7 @@ public class TaskServiceImpl implements TaskService {
         task.setStatus(TaskStatus.PENDING);
         return taskRepository.save(task);
     }
+
     @Override
     public TaskDto toDto(Task task) {
         TaskDto dto = new TaskDto();

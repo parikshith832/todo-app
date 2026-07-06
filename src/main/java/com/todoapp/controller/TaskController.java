@@ -37,8 +37,9 @@ public class TaskController {
     }
 
     @GetMapping("/new")
-    public String newTaskForm(@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dueDate,
-                              Model model) {
+    public String newTaskForm(
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dueDate,
+            Model model) {
         TaskDto taskDto = new TaskDto();
         if (dueDate != null) {
             taskDto.setDueDate(dueDate);
@@ -49,9 +50,9 @@ public class TaskController {
 
     @PostMapping
     public String createTask(@Valid @ModelAttribute("taskDto") TaskDto taskDto,
-                             BindingResult bindingResult,
-                             Model model,
-                             RedirectAttributes redirectAttributes) {
+            BindingResult bindingResult,
+            Model model,
+            RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             populateFormModel(model, taskDto, false);
             return "tasks/form";
@@ -80,10 +81,10 @@ public class TaskController {
 
     @PostMapping("/{id}")
     public String updateTask(@PathVariable Long id,
-                             @Valid @ModelAttribute("taskDto") TaskDto taskDto,
-                             BindingResult bindingResult,
-                             Model model,
-                             RedirectAttributes redirectAttributes) {
+            @Valid @ModelAttribute("taskDto") TaskDto taskDto,
+            BindingResult bindingResult,
+            Model model,
+            RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             populateFormModel(model, taskDto, true);
             return "tasks/form";

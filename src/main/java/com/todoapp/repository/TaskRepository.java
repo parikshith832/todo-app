@@ -13,6 +13,7 @@ import java.util.Optional;
 
 public interface TaskRepository extends JpaRepository<Task, Long> {
     List<Task> findTop5ByUserOrderByIdDesc(User user);
+
     List<Task> findByUserOrderByDueDateAscDueTimeAsc(User user);
 
     List<Task> findByUserAndStatusOrderByDueDateAscDueTimeAsc(User user, TaskStatus status);

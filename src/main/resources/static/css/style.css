@@ -31,7 +31,7 @@
 
     --border-color: #34394a;
 
-    --shadow: 0 .125rem .5rem rgba(0,0,0,.35);
+    --shadow: 0 .125rem .5rem rgba(0, 0, 0, .35);
 }
 
 /* ======================================================
@@ -49,8 +49,8 @@ body.app-body {
     background: var(--app-bg);
     color: var(--text-primary);
     transition:
-            background .25s ease,
-            color .25s ease;
+        background .25s ease,
+        color .25s ease;
 }
 
 /* ======================================================
@@ -90,7 +90,7 @@ main.container {
 }
 
 .navbar .nav-link:hover {
-    color: rgba(255,255,255,.85);
+    color: rgba(255, 255, 255, .85);
 }
 
 .theme-toggle {
@@ -118,7 +118,7 @@ main.container {
 }
 
 .card:hover {
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.12);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .12);
 }
 
 /* ======================================================
@@ -138,6 +138,7 @@ main.container {
 .text-muted {
     color: var(--text-muted) !important;
 }
+
 /* ======================================================
    DASHBOARD STAT CARDS
 ====================================================== */
@@ -172,19 +173,19 @@ main.container {
 }
 
 .stat-total .stat-icon {
-    background: linear-gradient(135deg,#4361ee,#3a0ca3);
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
 }
 
 .stat-pending .stat-icon {
-    background: linear-gradient(135deg,#ff9800,#f44336);
+    background: linear-gradient(135deg, #ff9800, #f44336);
 }
 
 .stat-completed .stat-icon {
-    background: linear-gradient(135deg,#22c55e,#0f9d58);
+    background: linear-gradient(135deg, #22c55e, #0f9d58);
 }
 
 .stat-today .stat-icon {
-    background: linear-gradient(135deg,#38bdf8,#4361ee);
+    background: linear-gradient(135deg, #38bdf8, #4361ee);
 }
 
 .stat-value {
@@ -300,13 +301,13 @@ main.container {
 
     text-decoration: none;
 
-    background: linear-gradient(135deg,#4361ee,#5a67ff);
+    background: linear-gradient(135deg, #4361ee, #5a67ff);
 
     color: #fff;
 
     font-size: 1.8rem;
 
-    box-shadow: 0 12px 28px rgba(67,97,238,.35);
+    box-shadow: 0 12px 28px rgba(67, 97, 238, .35);
 
     z-index: 999;
     transition: .25s;
@@ -344,351 +345,355 @@ main.container {
    RESPONSIVE
 ====================================================== */
 
-@media (max-width:992px){
+@media (max-width:992px) {
 
-    .stat-card{
-        padding:20px;
+    .stat-card {
+        padding: 20px;
     }
 
-    .stat-icon{
-        width:60px;
-        height:60px;
-        font-size:1.5rem;
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
     }
 
-    .stat-value{
-        font-size:2rem;
+    .stat-value {
+        font-size: 2rem;
     }
 
-    .quick-action-card{
-        padding:32px 15px;
+    .quick-action-card {
+        padding: 32px 15px;
     }
 }
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
-    .page-title{
-        font-size:1.7rem;
+    .page-title {
+        font-size: 1.7rem;
     }
 
-    .floating-add-btn{
-        width:58px;
-        height:58px;
-        right:20px;
-        bottom:20px;
-        font-size:1.5rem;
+    .floating-add-btn {
+        width: 58px;
+        height: 58px;
+        right: 20px;
+        bottom: 20px;
+        font-size: 1.5rem;
     }
 
-    .navbar-brand{
-        font-size:1.5rem;
+    .navbar-brand {
+        font-size: 1.5rem;
     }
-}/* ======================================================
+}
+
+/* ======================================================
    TASK CARDS
 ====================================================== */
 
-.task-card{
-    border:none;
-    border-radius:16px;
-    overflow:hidden;
-    transition:var(--transition);
-    height:100%;
+.task-card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition);
+    height: 100%;
 }
 
-.task-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 .75rem 1.5rem rgba(0,0,0,.12);
+.task-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .12);
 }
 
-.task-title{
-    font-weight:700;
-    margin-bottom:.5rem;
-    color:var(--text-primary);
+.task-title {
+    font-weight: 700;
+    margin-bottom: .5rem;
+    color: var(--text-primary);
 }
 
-.task-completed{
-    opacity:.75;
+.task-completed {
+    opacity: .75;
 }
 
-.task-completed .task-title{
-    text-decoration:line-through;
+.task-completed .task-title {
+    text-decoration: line-through;
 }
 
-.task-meta{
-    font-size:.9rem;
-    color:var(--text-muted);
+.task-meta {
+    font-size: .9rem;
+    color: var(--text-muted);
 }
 
-.text-truncate-2{
-    display:-webkit-box;
-    -webkit-line-clamp:2;
-    -webkit-box-orient:vertical;
-    overflow:hidden;
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /* ======================================================
    PRIORITY BADGES
 ====================================================== */
 
-.priority-badge{
-    color:#fff;
-    font-weight:600;
-    padding:.45rem .8rem;
-    border-radius:50rem;
-    font-size:.75rem;
+.priority-badge {
+    color: #fff;
+    font-weight: 600;
+    padding: .45rem .8rem;
+    border-radius: 50rem;
+    font-size: .75rem;
 }
 
-.priority-low{
-    background:#6c757d;
+.priority-low {
+    background: #6c757d;
 }
 
-.priority-medium{
-    background:#4361ee;
+.priority-medium {
+    background: #4361ee;
 }
 
-.priority-high{
-    background:#dc3545;
+.priority-high {
+    background: #dc3545;
 }
 
 /* ======================================================
    STATUS BADGES
 ====================================================== */
 
-.badge.bg-success{
-    background:#198754 !important;
+.badge.bg-success {
+    background: #198754 !important;
 }
 
-.badge.bg-warning{
-    background:#ffc107 !important;
+.badge.bg-warning {
+    background: #ffc107 !important;
 }
 
 /* ======================================================
    TASK DETAILS
 ====================================================== */
 
-.detail-sidebar{
-    background:var(--app-bg);
-    border:1px solid var(--border-color);
-    border-radius:12px;
-    padding:1rem;
+.detail-sidebar {
+    background: var(--app-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem;
 }
 
 /* ======================================================
    TODAY'S SCHEDULE
 ====================================================== */
 
-.schedule-item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:1rem 0;
-    border-bottom:1px solid var(--border-color);
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.schedule-item:last-child{
-    border-bottom:none;
+.schedule-item:last-child {
+    border-bottom: none;
 }
 
-.schedule-item strong{
-    display:block;
-    margin-bottom:4px;
+.schedule-item strong {
+    display: block;
+    margin-bottom: 4px;
 }
 
-.schedule-item .small{
-    color:var(--text-muted);
+.schedule-item .small {
+    color: var(--text-muted);
 }
 
 /* ======================================================
    RECENT TASK TABLE
 ====================================================== */
 
-.table{
-    margin-bottom:0;
-    vertical-align:middle;
+.table {
+    margin-bottom: 0;
+    vertical-align: middle;
 }
 
-.table thead th{
-    font-weight:700;
-    color:var(--text-primary);
-    border-bottom:2px solid var(--border-color);
+.table thead th {
+    font-weight: 700;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
 }
 
-.table tbody td{
-    padding:1rem;
+.table tbody td {
+    padding: 1rem;
 }
 
-.table-hover tbody tr{
-    transition:.2s;
+.table-hover tbody tr {
+    transition: .2s;
 }
 
-.table-hover tbody tr:hover{
-    background:rgba(67,97,238,.05);
+.table-hover tbody tr:hover {
+    background: rgba(67, 97, 238, .05);
 }
 
 /* ======================================================
    SEARCH
 ====================================================== */
 
-#taskSearch{
-    border-radius:10px;
+#taskSearch {
+    border-radius: 10px;
 }
 
-.filter-buttons .btn{
-    border-radius:20px;
+.filter-buttons .btn {
+    border-radius: 20px;
 }
 
 /* ======================================================
    EMPTY STATE
 ====================================================== */
 
-.empty-state{
-    border:none;
-    border-radius:16px;
+.empty-state {
+    border: none;
+    border-radius: 16px;
 }
 
-.empty-state i{
-    opacity:.55;
+.empty-state i {
+    opacity: .55;
 }
 
-.empty-state h4{
-    margin-top:.75rem;
-    font-weight:700;
+.empty-state h4 {
+    margin-top: .75rem;
+    font-weight: 700;
 }
 
 /* ======================================================
    ACTION BUTTONS
 ====================================================== */
 
-.task-card .btn{
-    width:36px;
-    height:36px;
+.task-card .btn {
+    width: 36px;
+    height: 36px;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    padding:0;
+    padding: 0;
 }
 
-.task-card form{
-    margin:0;
+.task-card form {
+    margin: 0;
 }
 
 /* ======================================================
    TABLE RESPONSIVE
 ====================================================== */
 
-.table-responsive{
-    border-radius:0 0 16px 16px;
+.table-responsive {
+    border-radius: 0 0 16px 16px;
 }
 
 /* ======================================================
    MOBILE
 ====================================================== */
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-    .schedule-item{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:.5rem;
+    .schedule-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5rem;
     }
 
-    .table{
-        font-size:.9rem;
+    .table {
+        font-size: .9rem;
     }
 
-    .task-card .btn{
-        width:34px;
-        height:34px;
+    .task-card .btn {
+        width: 34px;
+        height: 34px;
     }
 
-}/* ======================================================
+}
+
+/* ======================================================
    AUTHENTICATION
 ====================================================== */
 
-.auth-page{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:100vh;
-    padding:1rem;
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
 }
 
-.auth-wrapper{
-    width:100%;
-    max-width:440px;
+.auth-wrapper {
+    width: 100%;
+    max-width: 440px;
 }
 
-.auth-card{
-    border:none;
-    border-radius:20px;
-    overflow:hidden;
+.auth-card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-.auth-card .card-body{
-    padding:2.5rem;
+.auth-card .card-body {
+    padding: 2.5rem;
 }
 
 /* ======================================================
    FORM ELEMENTS
 ====================================================== */
 
-.form-label{
-    font-weight:600;
-    margin-bottom:.45rem;
+.form-label {
+    font-weight: 600;
+    margin-bottom: .45rem;
 }
 
 .form-control,
-.form-select{
+.form-select {
 
-    border-radius:10px;
+    border-radius: 10px;
 
-    padding:.75rem .95rem;
+    padding: .75rem .95rem;
 
-    transition:.25s;
+    transition: .25s;
 }
 
 .form-control:focus,
-.form-select:focus{
+.form-select:focus {
 
-    border-color:#4361ee;
+    border-color: #4361ee;
 
-    box-shadow:0 0 0 .2rem rgba(67,97,238,.15);
-
-}
-
-.input-group-text{
-
-    border-radius:10px 0 0 10px;
-
-    background:#f8f9fa;
+    box-shadow: 0 0 0 .2rem rgba(67, 97, 238, .15);
 
 }
 
-textarea.form-control{
-    min-height:130px;
-    resize:vertical;
+.input-group-text {
+
+    border-radius: 10px 0 0 10px;
+
+    background: #f8f9fa;
+
 }
 
-.form-text{
-    color:var(--text-muted);
+textarea.form-control {
+    min-height: 130px;
+    resize: vertical;
 }
 
-.invalid-feedback{
-    font-size:.85rem;
+.form-text {
+    color: var(--text-muted);
+}
+
+.invalid-feedback {
+    font-size: .85rem;
 }
 
 /* ======================================================
    DETAIL SIDEBAR
 ====================================================== */
 
-.detail-sidebar{
+.detail-sidebar {
 
-    border-radius:15px;
+    border-radius: 15px;
 
-    background:var(--app-bg);
+    background: var(--app-bg);
 
-    border:1px solid var(--border-color);
+    border: 1px solid var(--border-color);
 
 }
 
@@ -696,125 +701,125 @@ textarea.form-control{
    CALENDAR
 ====================================================== */
 
-.calendar-widget{
-    user-select:none;
+.calendar-widget {
+    user-select: none;
 }
 
-.calendar-header{
+.calendar-header {
 
-    display:flex;
+    display: flex;
 
-    justify-content:space-between;
+    justify-content: space-between;
 
-    align-items:center;
+    align-items: center;
 
-    margin-bottom:1.5rem;
-
-}
-
-.calendar-header h4{
-
-    margin:0;
-
-    font-weight:700;
+    margin-bottom: 1.5rem;
 
 }
 
-.calendar-grid{
+.calendar-header h4 {
 
-    display:grid;
+    margin: 0;
 
-    grid-template-columns:repeat(7,1fr);
-
-    gap:6px;
+    font-weight: 700;
 
 }
 
-.calendar-day-name{
+.calendar-grid {
 
-    text-align:center;
+    display: grid;
 
-    padding:.75rem 0;
+    grid-template-columns: repeat(7, 1fr);
 
-    font-weight:700;
-
-    color:var(--text-muted);
+    gap: 6px;
 
 }
 
-.calendar-day{
+.calendar-day-name {
 
-    aspect-ratio:1;
+    text-align: center;
 
-    display:flex;
+    padding: .75rem 0;
 
-    flex-direction:column;
+    font-weight: 700;
 
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    position:relative;
-
-    border:2px solid transparent;
-
-    transition:.25s;
+    color: var(--text-muted);
 
 }
 
-.calendar-day.empty{
+.calendar-day {
 
-    cursor:default;
+    aspect-ratio: 1;
 
-}
+    display: flex;
 
-.calendar-day:hover:not(.empty){
+    flex-direction: column;
 
-    background:rgba(67,97,238,.08);
+    align-items: center;
 
-}
+    justify-content: center;
 
-.calendar-day.today{
+    border-radius: 12px;
 
-    border-color:#4361ee;
+    cursor: pointer;
 
-    font-weight:700;
+    position: relative;
 
-}
+    border: 2px solid transparent;
 
-.calendar-day.selected{
-
-    background:#4361ee;
-
-    color:#fff;
+    transition: .25s;
 
 }
 
-.calendar-day.has-tasks::after{
+.calendar-day.empty {
 
-    content:"";
-
-    position:absolute;
-
-    bottom:6px;
-
-    width:6px;
-
-    height:6px;
-
-    border-radius:50%;
-
-    background:#ff9800;
+    cursor: default;
 
 }
 
-.calendar-day.selected.has-tasks::after{
+.calendar-day:hover:not(.empty) {
 
-    background:#fff;
+    background: rgba(67, 97, 238, .08);
+
+}
+
+.calendar-day.today {
+
+    border-color: #4361ee;
+
+    font-weight: 700;
+
+}
+
+.calendar-day.selected {
+
+    background: #4361ee;
+
+    color: #fff;
+
+}
+
+.calendar-day.has-tasks::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 6px;
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #ff9800;
+
+}
+
+.calendar-day.selected.has-tasks::after {
+
+    background: #fff;
 
 }
 
@@ -822,31 +827,31 @@ textarea.form-control{
    CALENDAR TASKS
 ====================================================== */
 
-.calendar-task-item{
+.calendar-task-item {
 
-    padding:1rem;
+    padding: 1rem;
 
-    border-radius:12px;
+    border-radius: 12px;
 
-    border:1px solid var(--border-color);
+    border: 1px solid var(--border-color);
 
-    background:var(--app-bg);
+    background: var(--app-bg);
 
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
 
-    transition:.25s;
-
-}
-
-.calendar-task-item:hover{
-
-    border-color:#4361ee;
+    transition: .25s;
 
 }
 
-.calendar-task-item:last-child{
+.calendar-task-item:hover {
 
-    margin-bottom:0;
+    border-color: #4361ee;
+
+}
+
+.calendar-task-item:last-child {
+
+    margin-bottom: 0;
 
 }
 
@@ -854,47 +859,49 @@ textarea.form-control{
    RESPONSIVE
 ====================================================== */
 
-@media(max-width:992px){
+@media(max-width:992px) {
 
-    .calendar-grid{
+    .calendar-grid {
 
-        gap:4px;
-
-    }
-
-}
-
-@media(max-width:768px){
-
-    .auth-card .card-body{
-
-        padding:2rem;
-
-    }
-
-    .calendar-day{
-
-        font-size:.85rem;
+        gap: 4px;
 
     }
 
 }
 
-@media(max-width:576px){
+@media(max-width:768px) {
 
-    .calendar-day{
+    .auth-card .card-body {
 
-        border-radius:8px;
-
-    }
-
-    .calendar-day-name{
-
-        font-size:.75rem;
+        padding: 2rem;
 
     }
 
-}/* ======================================================
+    .calendar-day {
+
+        font-size: .85rem;
+
+    }
+
+}
+
+@media(max-width:576px) {
+
+    .calendar-day {
+
+        border-radius: 8px;
+
+    }
+
+    .calendar-day-name {
+
+        font-size: .75rem;
+
+    }
+
+}
+
+/* ======================================================
    DARK MODE
 ====================================================== */
 
@@ -914,18 +921,18 @@ textarea.form-control{
 
 [data-theme="dark"],
 [data-theme="dark"] body,
-[data-theme="dark"] .app-body{
+[data-theme="dark"] .app-body {
 
-    background:var(--app-bg);
-    color:var(--text-primary);
+    background: var(--app-bg);
+    color: var(--text-primary);
 
 }
 
 /* Navbar */
 
-[data-theme="dark"] .app-navbar{
+[data-theme="dark"] .app-navbar {
 
-    background:var(--navbar-bg)!important;
+    background: var(--navbar-bg) !important;
 
 }
 
@@ -934,18 +941,18 @@ textarea.form-control{
 [data-theme="dark"] .card,
 [data-theme="dark"] .stat-card,
 [data-theme="dark"] .quick-action-card,
-[data-theme="dark"] .auth-card{
+[data-theme="dark"] .auth-card {
 
-    background:var(--card-bg);
-    border:1px solid var(--border-color);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
 
 }
 
-[data-theme="dark"] .card-header{
+[data-theme="dark"] .card-header {
 
-    background:transparent;
-    border-bottom:1px solid var(--border-color);
-    color:#fff;
+    background: transparent;
+    border-bottom: 1px solid var(--border-color);
+    color: #fff;
 
 }
 
@@ -957,91 +964,91 @@ textarea.form-control{
 [data-theme="dark"] h4,
 [data-theme="dark"] h5,
 [data-theme="dark"] h6,
-[data-theme="dark"] strong{
+[data-theme="dark"] strong {
 
-    color:#fff;
+    color: #fff;
 
 }
 
-[data-theme="dark"] .text-muted{
+[data-theme="dark"] .text-muted {
 
-    color:var(--text-muted)!important;
+    color: var(--text-muted) !important;
 
 }
 
 /* Dashboard */
 
-[data-theme="dark"] .stat-value{
+[data-theme="dark"] .stat-value {
 
-    color:#fff;
+    color: #fff;
 
 }
 
-[data-theme="dark"] .stat-label{
+[data-theme="dark"] .stat-label {
 
-    color:var(--text-muted);
+    color: var(--text-muted);
 
 }
 
 /* Quick Actions */
 
-[data-theme="dark"] .quick-action-card{
+[data-theme="dark"] .quick-action-card {
 
-    color:#fff;
+    color: #fff;
 
 }
 
-[data-theme="dark"] .quick-action-card:hover{
+[data-theme="dark"] .quick-action-card:hover {
 
-    background:#2f3648;
+    background: #2f3648;
 
 }
 
 /* Schedule */
 
-[data-theme="dark"] .schedule-item{
+[data-theme="dark"] .schedule-item {
 
-    border-color:var(--border-color);
+    border-color: var(--border-color);
 
 }
 
-[data-theme="dark"] .schedule-item strong{
+[data-theme="dark"] .schedule-item strong {
 
-    color:#fff;
+    color: #fff;
 
 }
 
 /* Tables */
 
-[data-theme="dark"] .table{
+[data-theme="dark"] .table {
 
     --bs-table-bg: transparent;
-    --bs-table-color:#fff;
-    --bs-table-border-color:var(--border-color);
-    --bs-table-hover-bg:#32384a;
-    --bs-table-striped-bg:#2d3344;
+    --bs-table-color: #fff;
+    --bs-table-border-color: var(--border-color);
+    --bs-table-hover-bg: #32384a;
+    --bs-table-striped-bg: #2d3344;
 
-    color:#fff;
-
-}
-
-[data-theme="dark"] .table thead th{
-
-    color:#fff;
-    border-color:var(--border-color);
+    color: #fff;
 
 }
 
-[data-theme="dark"] .table tbody td{
+[data-theme="dark"] .table thead th {
 
-    color:#fff;
-    border-color:var(--border-color);
+    color: #fff;
+    border-color: var(--border-color);
 
 }
 
-[data-theme="dark"] .table-hover tbody tr:hover{
+[data-theme="dark"] .table tbody td {
 
-    background:#32384a;
+    color: #fff;
+    border-color: var(--border-color);
+
+}
+
+[data-theme="dark"] .table-hover tbody tr:hover {
+
+    background: #32384a;
 
 }
 
@@ -1049,140 +1056,142 @@ textarea.form-control{
 
 [data-theme="dark"] .form-control,
 [data-theme="dark"] .form-select,
-[data-theme="dark"] textarea{
+[data-theme="dark"] textarea {
 
-    background:#2d3344;
-    color:#fff;
-    border:1px solid #495166;
+    background: #2d3344;
+    color: #fff;
+    border: 1px solid #495166;
 
 }
 
-[data-theme="dark"] .form-control::placeholder{
+[data-theme="dark"] .form-control::placeholder {
 
-    color:#adb5bd;
+    color: #adb5bd;
 
 }
 
 [data-theme="dark"] .form-control:focus,
-[data-theme="dark"] .form-select:focus{
+[data-theme="dark"] .form-select:focus {
 
-    background:#2d3344;
-    color:#fff;
-    border-color:#4361ee;
-    box-shadow:0 0 0 .2rem rgba(67,97,238,.2);
+    background: #2d3344;
+    color: #fff;
+    border-color: #4361ee;
+    box-shadow: 0 0 0 .2rem rgba(67, 97, 238, .2);
 
 }
 
-[data-theme="dark"] .input-group-text{
+[data-theme="dark"] .input-group-text {
 
-    background:#2d3344;
-    color:#fff;
-    border-color:#495166;
+    background: #2d3344;
+    color: #fff;
+    border-color: #495166;
 
 }
 
 /* Dropdown */
 
-[data-theme="dark"] .dropdown-menu{
+[data-theme="dark"] .dropdown-menu {
 
-    background:#242834;
-    border:1px solid var(--border-color);
-
-}
-
-[data-theme="dark"] .dropdown-item{
-
-    color:#fff;
+    background: #242834;
+    border: 1px solid var(--border-color);
 
 }
 
-[data-theme="dark"] .dropdown-item:hover{
+[data-theme="dark"] .dropdown-item {
 
-    background:#32384a;
+    color: #fff;
 
 }
 
-[data-theme="dark"] .dropdown-divider{
+[data-theme="dark"] .dropdown-item:hover {
 
-    border-color:var(--border-color);
+    background: #32384a;
+
+}
+
+[data-theme="dark"] .dropdown-divider {
+
+    border-color: var(--border-color);
 
 }
 
 /* Calendar */
 
-[data-theme="dark"] .calendar-day{
+[data-theme="dark"] .calendar-day {
 
-    background:#2d3344;
-    color:#fff;
-    border-color:#495166;
-
-}
-
-[data-theme="dark"] .calendar-day:hover{
-
-    background:#3b4358;
+    background: #2d3344;
+    color: #fff;
+    border-color: #495166;
 
 }
 
-[data-theme="dark"] .calendar-day.today{
+[data-theme="dark"] .calendar-day:hover {
 
-    border:2px solid #4f7cff;
-
-}
-
-[data-theme="dark"] .calendar-day.selected{
-
-    background:#4361ee;
-    color:#fff;
+    background: #3b4358;
 
 }
 
-[data-theme="dark"] .calendar-day-name{
+[data-theme="dark"] .calendar-day.today {
 
-    color:#d5d9e2;
+    border: 2px solid #4f7cff;
 
 }
 
-[data-theme="dark"] .calendar-task-item{
+[data-theme="dark"] .calendar-day.selected {
 
-    background:#2d3344;
-    border:1px solid #495166;
+    background: #4361ee;
+    color: #fff;
+
+}
+
+[data-theme="dark"] .calendar-day-name {
+
+    color: #d5d9e2;
+
+}
+
+[data-theme="dark"] .calendar-task-item {
+
+    background: #2d3344;
+    border: 1px solid #495166;
 
 }
 
 /* Sidebar */
 
-[data-theme="dark"] .detail-sidebar{
+[data-theme="dark"] .detail-sidebar {
 
-    background:#2d3344;
-    border:1px solid #495166;
+    background: #2d3344;
+    border: 1px solid #495166;
 
 }
 
 /* Empty State */
 
-[data-theme="dark"] .empty-state{
+[data-theme="dark"] .empty-state {
 
-    background:#242834;
-    border:1px solid var(--border-color);
+    background: #242834;
+    border: 1px solid var(--border-color);
 
 }
 
 /* Floating Button */
 
-[data-theme="dark"] .floating-add-btn{
+[data-theme="dark"] .floating-add-btn {
 
-    box-shadow:0 10px 30px rgba(0,0,0,.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
 
 }
 
 /* Footer */
 
-[data-theme="dark"] footer{
+[data-theme="dark"] footer {
 
-    color:#b5bcc8;
+    color: #b5bcc8;
 
-}/* ===== Dark Mode Form Fix ===== */
+}
+
+/* ===== Dark Mode Form Fix ===== */
 
 [data-theme="dark"] label,
 [data-theme="dark"] .form-label,

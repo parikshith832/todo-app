@@ -29,9 +29,9 @@ public class CalendarController {
 
     @GetMapping
     public String calendar(@RequestParam(required = false) Integer year,
-                           @RequestParam(required = false) Integer month,
-                           @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate selectedDate,
-                           Model model) {
+            @RequestParam(required = false) Integer month,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate selectedDate,
+            Model model) {
         User user = currentUser.getUser();
         YearMonth yearMonth = resolveYearMonth(year, month);
         LocalDate date = selectedDate != null ? selectedDate : LocalDate.now();
@@ -56,8 +56,7 @@ public class CalendarController {
                     "id", task.getId(),
                     "title", task.getTitle(),
                     "status", task.getStatus().name(),
-                    "dueTime", task.getDueTime() != null ? task.getDueTime().toString() : ""
-            ));
+                    "dueTime", task.getDueTime() != null ? task.getDueTime().toString() : ""));
         }
         return map;
     }

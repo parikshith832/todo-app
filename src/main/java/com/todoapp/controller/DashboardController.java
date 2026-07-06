@@ -12,24 +12,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequiredArgsConstructor
 public class DashboardController {
 
-    private final TaskService taskService;
-    private final CurrentUser currentUser;
+        private final TaskService taskService;
+        private final CurrentUser currentUser;
 
-    @GetMapping("/dashboard")
-    public String dashboard(Model model) {
+        @GetMapping("/dashboard")
+        public String dashboard(Model model) {
 
-        User user = currentUser.getUser();
+                User user = currentUser.getUser();
 
-        model.addAttribute("user", user);
+                model.addAttribute("user", user);
 
-        model.addAttribute("stats",
-                taskService.getDashboardStats(user));
+                model.addAttribute("stats",
+                                taskService.getDashboardStats(user));
 
-        model.addAttribute("todayTasks",
-                taskService.getTodayTasks(user));
-        model.addAttribute("recentTasks",
-                taskService.getRecentTasks(user));
+                model.addAttribute("todayTasks",
+                                taskService.getTodayTasks(user));
+                model.addAttribute("recentTasks",
+                                taskService.getRecentTasks(user));
 
-        return "dashboard";
-    }
+                return "dashboard";
+        }
 }

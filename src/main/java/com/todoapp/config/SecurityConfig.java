@@ -22,9 +22,9 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login", "/register", "/css/**", "/js/**", "/webjars/**", "/error").permitAll()
-                        .anyRequest().authenticated()
-                )
+                        .requestMatchers("/login", "/register", "/css/**", "/js/**", "/webjars/**", "/error")
+                        .permitAll()
+                        .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/login")
                         .loginProcessingUrl("/login")
@@ -32,15 +32,13 @@ public class SecurityConfig {
                         .failureUrl("/login?error=true")
                         .usernameParameter("usernameOrEmail")
                         .passwordParameter("password")
-                        .permitAll()
-                )
+                        .permitAll())
                 .logout(logout -> logout
                         .logoutUrl("/logout")
                         .logoutSuccessUrl("/login?logout=true")
                         .invalidateHttpSession(true)
                         .deleteCookies("JSESSIONID")
-                        .permitAll()
-                )
+                        .permitAll())
                 .authenticationProvider(authenticationProvider());
 
         return http.build();
